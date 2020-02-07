@@ -19,6 +19,9 @@ package() {
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
 
 	install -dm755 ${pkgdir}${_destname1}
-  mkdir -p ${pkgdir}/usr/share/backgrounds/vicyos
-	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh 
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	cp -r  ${srcdir}/${_pkgname}* ${pkgdir}${_destname1}
 }
