@@ -1,4 +1,4 @@
-# Maintainer: Vicyos <felipendc10.dubois@gmail.com>
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
 pkgname=vicyos-wallpapers-git
 _pkgname=vicyos-wallpapers
 _destname1="/usr/share/backgrounds/vicyos/"
