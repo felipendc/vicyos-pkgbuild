@@ -1,0 +1,27 @@
+
+
+Commands for Linux Distribution based on Arch Linux:
+
+sudo pacman -Syu
+sudo pacman -S yay
+sudo pacman -S polybar
+sudo pacman -S dmenu
+sudo pacman -S rofi
+
+.....
+
+
+
+Commands for Linux Distribution based on Ubuntu or Debian:
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y dmenu
+sudo apt-get install -y rofi
+
+Now you need to install the polybar in your Distro based on Ubuntu or Debian:
+
+Go to this website and build it from source:
+https://github.com/polybar/polybar
+
+
