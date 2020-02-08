@@ -35,7 +35,7 @@ package() {
 	rm -r  ${srcdir}/${_pkgname}/README.md
 
 	cp -r  ${srcdir}/${_pkgname}/Dependencies/vicyos-hefftor-polybar.desktop ${pkgdir}${_destname1}
-    cp -r  ${srcdir}/${_pkgname}/Dependencies/vicyos-hefftor-polybar-task-config.tar.bz2 ${pkgdir}${_destname2}
+#    cp -r  ${srcdir}/${_pkgname}/Dependencies/vicyos-hefftor-polybar-task-config.tar.bz2 ${pkgdir}${_destname2}
     cp -r  ${srcdir}/${_pkgname}/vicyos-launch.sh ${pkgdir}${_destname4}
     cp -r  ${srcdir}/${_pkgname}/config ${pkgdir}${_destname4}
     cp -r  ${srcdir}/${_pkgname}/scripts ${pkgdir}${_destname4}
