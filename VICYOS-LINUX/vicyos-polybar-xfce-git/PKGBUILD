@@ -3,7 +3,7 @@
 pkgname=vicyos-polybar-xfce-git
 _pkgname=vicyos-hefftor-polybar-xfce
 _destname1="/etc/skel/.config/autostart/"
-_destname2="/etc/skel/.local/share/xfce4-panel-profiles//"
+#_destname2="/etc/skel/.local/share/xfce4-panel-profiles/"
 #_destname3="/usr/share/fonts/"
 _destname4="/etc/skel/.config/polybar/"
 
