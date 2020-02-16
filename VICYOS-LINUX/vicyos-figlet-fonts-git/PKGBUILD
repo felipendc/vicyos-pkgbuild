@@ -1,0 +1,32 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=vicyos-figlet-fonts-git
+_pkgname=vicyos-figlet-fonts
+_destname1="/fliget-fonts/"
+_destname2="/usr/share/fonts/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.2.16
+pkgrel=1
+pkgdesc="figlet fonts for vicyos polybar"
+arch=('any')
+url="https://github.com/felipendc/vicyos-figlet-fonts"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+    install -dm755 ${pkgdir}${_destname2}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+}
