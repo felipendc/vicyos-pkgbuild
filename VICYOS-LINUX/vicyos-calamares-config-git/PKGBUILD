@@ -2,7 +2,7 @@
 pkgname=vicyos-calamares-config-git
 _pkgname=vicyos-calamares-config
 _destname1="/calamares/"
-_destname2="/usr/share/calamares/settings.conf/"
+_destname2="/etc/calamares/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.2.9
 pkgrel=1
