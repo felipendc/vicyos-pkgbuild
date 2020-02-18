@@ -1,11 +1,8 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
 pkgname=vicyos-grub-customizer-git
 _pkgname=vicyos-grub-customizer
-_destname1="/etc/default/"
-_destname2="/etc/default/"
-_destname3="/boot/grub/themes/Vimix/"
-_destname4="/boot/grub/themes/Vimix/"
-
+_destname1="/boot/grub/themes/Vimix/"
+_destname2="/boot/grub/themes/Vimix/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.2.17
 pkgrel=1
@@ -25,14 +22,11 @@ package() {
 	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
 
 	install -dm755 ${pkgdir}${_destname1}
-	install -dm755 ${pkgdir}${_destname2}
-	install -dm755 ${pkgdir}${_destname3}
-	install -dm755 ${pkgdir}${_destname4}	
+	install -dm755 ${pkgdir}${_destname2}	
 
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
 	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
 	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
-	cp -r  ${srcdir}/${_pkgname}${_destname3}* ${pkgdir}${_destname4}
 }
