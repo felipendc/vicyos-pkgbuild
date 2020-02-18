@@ -1,6 +1,6 @@
 # Maintainer: Dylan Araps <dyl@tfwno.gf>
-pkgname=neofetch-git
-_pkgname=neofetch
+pkgname=neofetch-vicyos-ascii-git
+_pkgname=neofetch-vicyos-ascii
 pkgver=6.1.0.r205.gebc990f
 pkgrel=1
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
@@ -25,7 +25,7 @@ optdepends=(
   'xorg-xwininfo: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
 )
 makedepends=('git')
-source=("$pkgname::git+https://github.com/felipendc/neofetch.git")
+source=("$pkgname::git+https://github.com/felipendc/neofetch-vicyos-ascii.git")
 md5sums=('SKIP')
 
 pkgver() {
