@@ -1,0 +1,32 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-el-capitan-cursors-mod-git
+_pkgname=vicyos-el-capitan-cursors-mod
+_destname1="/El_Capitan_Cursors/"
+_destname2="/usr/share/icons/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.3.1
+pkgrel=1
+pkgdesc="el-capitan-cursors-mod for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-el-capitan-cursors-mod"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+}
