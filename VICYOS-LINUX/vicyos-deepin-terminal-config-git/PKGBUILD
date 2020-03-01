@@ -1,8 +1,8 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
 pkgname=vicyos-deepin-terminal-config-git
 _pkgname=vicyos-deepin-terminal-config
-_destname1="/etc/skel/.config/deepin-terminal/"
-_destname2="/etc/skel/.config/deepin-terminal/"
+_destname1="/etc/skel/.config/deepin/deepin-terminal/"
+_destname2="/etc/skel/.config/deepin/deepin-terminal/"
 
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.2.26
