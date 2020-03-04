@@ -1,0 +1,30 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-plank-v1-git
+_pkgname=vicyos-plank-v1
+_destname1="/.config/plank/dock1/launchers/"
+_destname2="/etc/skel/.config/plank/dock1/launchers/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.3.4
+pkgrel=1
+pkgdesc="plank-v1 launchers for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-plank-v1"
+license=('GPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+}
