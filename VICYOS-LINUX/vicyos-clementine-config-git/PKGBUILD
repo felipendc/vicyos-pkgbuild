@@ -1,14 +1,14 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=deepin-movie-config-git
-_pkgname=deepin-movie-config
-_destname1="/.config/deepin/deepin-movie/"
-_destname2="/etc/skel/.config/deepin/deepin-movie/"
+pkgname=vicyos-clementine-config-git
+_pkgname=vicyos-clementine-config
+_destname1="/.config/Clementine/"
+_destname2="/etc/skel/.config/Clementine/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.3.4
 pkgrel=1
-pkgdesc="deepin-movie-config for vicyoslinux"
+pkgdesc="clementine-config for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/deepin-movie-config"
+url="https://github.com/felipendc/vicyos-clementine-config"
 license=('GPL3')
 makedepends=('git')
 depends=()
