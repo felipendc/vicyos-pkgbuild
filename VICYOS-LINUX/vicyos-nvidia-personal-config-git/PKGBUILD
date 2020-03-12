@@ -1,0 +1,34 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-nvidia-personal-config-git
+_pkgname=vicyos-nvidia-personal-config
+_destname1="/40-nvidia-config/"
+_destname2="/etc/X11/xorg.conf.d/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.3.12
+pkgrel=1
+pkgdesc="vicyos-nvidia-personal-config for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-nvidia-personal-config"
+license=('GPL3')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+
+	
+}
