@@ -1,13 +1,13 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-nitrogen-git
-_pkgname=vicyos-nitrogen
+pkgname=vicyos-hlwm-nitrogen-git
+_pkgname=vicyos-hlwm-nitrogen
 _destname1="/etc/skel/.config/nitrogen/"
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.3.19
+pkgver=20.3.21
 pkgrel=1
 pkgdesc="vicyos-nitrogen"
 arch=('any')
-url="https://github.com/felipendc/vicyos-nitrogen"
+url="https://github.com/felipendc/vicyos-hlwm-nitrogen"
 license=('GPL3')
 makedepends=('git')
 replaces=($_pkgname)
@@ -22,9 +22,8 @@ package() {
 
 	install -dm755 ${pkgdir}${_destname1}
 	rm -r  ${srcdir}/${_pkgname}/.git
-	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh 
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh 
 	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE
-	rm -r  ${srcdir}/${_pkgname}/README.md
 	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
 }
