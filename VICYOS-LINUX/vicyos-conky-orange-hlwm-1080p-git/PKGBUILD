@@ -1,6 +1,6 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-conky-orange-hlwm-git
-_pkgname=vicyos-conky-orange-hlwm
+pkgname=vicyos-conky-orange-hlwm-1080p-git
+_pkgname=vicyos-conky-orange-hlwm-1080p
 _destname1="/.config/autostart/"
 _destname2="/.lua/scripts/"
 _destname3="/usr/share/fonts/"
@@ -13,9 +13,9 @@ _destname7="/etc/skel/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.3.20
 pkgrel=1
-pkgdesc="Vicyos-Orange-Conky-HLWM for vicyoslinux"
+pkgdesc="vicyos-conky-orange-hlwm-1080p for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-conky-orange-hlwm"
+url="https://github.com/felipendc/vicyos-conky-orange-hlwm-1080p"
 license=('GPL3')
 makedepends=('git')
 depends=()
