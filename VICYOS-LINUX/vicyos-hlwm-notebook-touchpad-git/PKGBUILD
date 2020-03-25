@@ -1,6 +1,6 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-notebook-touchpad-git
-_pkgname=vicyos-notebook-touchpad
+pkgname=vicyos-hlwm-notebook-touchpad-git
+_pkgname=vicyos-hlwm-notebook-touchpad
 _destname1="/usr/share/X11/xorg.conf.d/40-libinput.conf/"
 
 _licensedir="/usr/share/vicyos/licenses/"
@@ -8,7 +8,7 @@ pkgver=20.3.24
 pkgrel=1
 pkgdesc="touchpad-libinput for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-notebook-touchpad"
+url="https://github.com/felipendc/vicyos-hlwm-notebook-touchpad"
 license=('GPL3')
 makedepends=('git')
 depends=()
@@ -27,5 +27,5 @@ package() {
 	
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/LICENSE
-	cp -r  ${srcdir}/${_pkgname}/40-libinput.conf ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}/41-libinput.conf ${pkgdir}${_destname1}
 }
