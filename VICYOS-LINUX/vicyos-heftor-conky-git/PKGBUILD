@@ -1,6 +1,6 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-conky-git
-_pkgname=vicyos-conky
+pkgname=vicyos-heftor-conky-git
+_pkgname=vicyos-heftor-conky
 _destname1="/.config/autostart/"
 _destname2="/.lua/scripts/"
 
@@ -11,9 +11,9 @@ _destname5="/etc/skel/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.3.27
 pkgrel=1
-pkgdesc="concky for vicyoslinux"
+pkgdesc="vicyos-heftor-conky for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-conky"
+url="https://github.com/felipendc/vicyos-heftor-conky"
 license=('GPL3')
 makedepends=('git')
 depends=()

@@ -1,6 +1,6 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-conky-orange-git
-_pkgname=vicyos-conky-orange
+pkgname=vicyos-xfce-conky-orange-git
+_pkgname=vicyos-xfce-conky-orange
 _destname1="/.config/autostart/"
 _destname2="/.lua/scripts/"
 _destname3="/usr/share/fonts/"
@@ -13,9 +13,9 @@ _destname7="/etc/skel/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.3.27
 pkgrel=1
-pkgdesc="concky for vicyoslinux"
+pkgdesc="vicyos-xfce-conky-orange for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-conky-orange"
+url="https://github.com/felipendc/vicyos-xfce-conky-orange"
 license=('GPL3')
 makedepends=('git')
 depends=()
