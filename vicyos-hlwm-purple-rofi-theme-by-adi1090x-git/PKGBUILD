@@ -1,0 +1,31 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-hlwm-purple-rofi-theme-by-adi1090x-git
+_pkgname=vicyos-hlwm-purple-rofi-theme-by-adi1090x
+_destname1="/etc/skel/.config/rofi/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.4.6
+pkgrel=1
+pkgdesc="purple-rofi-theme-by-adi1090x for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-hlwm-purple-rofi-theme-by-adi1090x"
+license=('GPL3')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	rm -r  ${srcdir}/${_pkgname}/README.md	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
