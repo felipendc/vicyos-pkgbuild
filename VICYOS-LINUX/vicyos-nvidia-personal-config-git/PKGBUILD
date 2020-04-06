@@ -28,7 +28,7 @@ package() {
 
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
-	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}.nvidia-settings-rc ${pkgdir}${_destname2}
 
 	
 }
