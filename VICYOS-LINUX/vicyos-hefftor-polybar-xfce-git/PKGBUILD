@@ -1,6 +1,6 @@
  
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-polybar-xfce-git
+pkgname=vicyos-hefftor-polybar-xfce-git
 _pkgname=vicyos-hefftor-polybar-xfce
 _destname1="/etc/skel/.config/autostart/"
 #_destname2="/etc/skel/.local/share/xfce4-panel-profiles/"
