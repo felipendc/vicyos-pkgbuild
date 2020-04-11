@@ -1,19 +1,20 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-obmenu-generator-xtended-git
-_pkgname=vicyos-obmenu-generator-xtended
-_destname1="/etc/skel/.config/obmenu-generator/"
-_destname2="/etc/skel/.config/obmenu-generator/"
+pkgname=vicyos-xdm-git
+_pkgname=vicyos-xdm
+_destname1="/opt/"
+_destname2="/usr/"
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.3.19
+
+pkgver=20.4.11
 pkgrel=1
-pkgdesc="obmenu-generator for vicyoslinux"
+pkgdesc="xdm for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-obmenu-generator-xtended-git"
+url="https://github.com/felipendc/vicyos-xdm"
 license=('GPL3')
 makedepends=('git')
 depends=()
 replaces=($_pkgname)
-conflicts=("$_pkgname" "arcolinux-obmenu-generator-git" "arcolinux-obmenu-generator-minimal-git")
+conflicts=($_pkgname)
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
@@ -27,8 +28,10 @@ package() {
 	install -dm755 ${pkgdir}${_destname2}
 
 	rm -r  ${srcdir}/${_pkgname}/.git
-	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh
-	rm -r  ${srcdir}/${_pkgname}/git-v1.sh
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
-	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}	
+	rm -r  ${srcdir}/${_pkgname}/README.md	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+		cp -r  ${srcdir}/${_pkgname}${_destname2}* ${pkgdir}${_destname2}
 }
