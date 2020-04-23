@@ -2,7 +2,8 @@
 pkgname=vicyos-enable-snapd-git
 _pkgname=vicyos-enable-snapd
 _destname1="/etc/systemd/system/sockets.target.wants/"
-_destname2="/"
+_destname2="/var/lib/snapd/"
+_destname3="/"
 
 _licensedir="/usr/share/vicyos/licenses/"
 
@@ -27,10 +28,12 @@ package() {
 
 	install -dm755 ${pkgdir}${_destname1}
 	install -dm755 ${pkgdir}${_destname2}
+	install -dm755 ${pkgdir}${_destname3}
 
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/LICENSE
 
 	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${_pkgname}${_destname2}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}/snap ${pkgdir}${_destname3}
 }
