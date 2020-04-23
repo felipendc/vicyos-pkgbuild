@@ -1,6 +1,6 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos_enable_snapd-git
-_pkgname=vicyos_enable_snapd
+pkgname=vicyos-enable-snapd-git
+_pkgname=vicyos-enable-snapd
 _destname1="/etc/systemd/system/sockets.target.wants/"
 _destname2="/usr/lib/systemd/system/"
 _destname3="/"
@@ -11,7 +11,7 @@ pkgver=20.4.23
 pkgrel=1
 pkgdesc="Enable snapd for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos_enable_snapd"
+url="https://github.com/felipendc/vicyos-enable-snapd"
 license=('GPL3')
 makedepends=('git')
 depends=()
