@@ -14,9 +14,11 @@ echo "####################################"
 
 read input
 
-# Committing to the local repository with a message containing the time details and commit text
+# It will print the output of the command "date" and and a message containing the details and commit text
+output=$(date)
 
-git commit -m "$input"
+# This will print the date and the hour that this project was uploaded to github
+git commit -m "$input: ($output)"
 
 # Push the local files to github
 
