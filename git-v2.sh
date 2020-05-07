@@ -14,10 +14,10 @@ echo "####################################"
 
 read input
 
-# It will print the output of the command "date" and and a message containing the details and commit text
+# It will print the output of the command "date"
 output=$(date)
 
-# This will print the date and the hour that this project was uploaded to github
+# This will print the date and the hour that this project was uploaded to github and a message containing the details
 git commit -m "$input: ($output)"
 
 # Push the local files to github
