@@ -1,0 +1,40 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-plank-and-theme-gnome-git
+_pkgname=vicyos-plank-and-theme-gnome
+
+_destname1="/.config/plank/dock1/launchers/"
+_destname2="/etc/skel/.config/plank/dock1/launchers/"
+_destname3="/usr/share/plank/themes/"
+_licensedir="/usr/share/vicyos/licenses/"
+
+pkgver=20.5.12
+pkgrel=1
+pkgdesc="plank launchers for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-plank-and-theme-gnome"
+license=('GPL3')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+	install -dm755 ${pkgdir}${_destname3}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+		rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+			rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname3}* ${pkgdir}${_destname3}
+}
