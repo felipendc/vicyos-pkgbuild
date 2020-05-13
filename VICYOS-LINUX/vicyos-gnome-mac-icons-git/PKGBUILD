@@ -1,15 +1,14 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-mac-theme-git
-_pkgname=vicyos-mac-theme
-_destname1="/Themes/"
-_destname2="/usr/share/themes/"
-
+pkgname=vicyos-gnome-mac-icons-git
+_pkgname=vicyos-gnome-mac-icons
+_destname1="/icons/"
+_destname2="/usr/share/icons/"
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.2.15
+pkgver=20.5.13
 pkgrel=1
-pkgdesc="Mac-theme for vicyoslinux"
+pkgdesc="icons for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-mac-theme"
+url="https://github.com/felipendc/vicyos-gnome-mac-icons"
 license=('GPL3')
 makedepends=('git')
 depends=()
@@ -27,12 +26,9 @@ package() {
 	install -dm755 ${pkgdir}${_destname1}
 	install -dm755 ${pkgdir}${_destname2}
 
-
 	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
 	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
 	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
-	rm -r  ${srcdir}/${_pkgname}/LICENSE	
 	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
-
-	
 }
