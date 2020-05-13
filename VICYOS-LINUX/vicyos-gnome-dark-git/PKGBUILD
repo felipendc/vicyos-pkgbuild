@@ -1,14 +1,13 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-calamares-config-git
-_pkgname=vicyos-calamares-config
-_destname1="/calamares/"
-_destname2="/etc/calamares/"
+pkgname=vicyos-gnome-dark-git
+_pkgname=vicyos-gnome-dark
+_destname1="/etc/skel/.config/dconf/"
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.2.9
+pkgver=20.5.13
 pkgrel=1
-pkgdesc="calamares config for vicyoslinux"
+pkgdesc=".config for vicyoslinux"
 arch=('any')
-url="https://github.com/felipendc/vicyos-calamares-config"
+url="https://github.com/felipendc/vicyos-gnome-dark"
 license=('GPL3')
 makedepends=('git')
 depends=()
@@ -30,5 +29,5 @@ package() {
 	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
 	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
-	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
 }
