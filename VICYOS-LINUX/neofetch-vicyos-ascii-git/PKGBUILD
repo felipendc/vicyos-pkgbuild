@@ -1,7 +1,7 @@
 # Maintainer: Dylan Araps <dyl@tfwno.gf>
 pkgname=neofetch-vicyos-ascii-git
 _pkgname=neofetch-vicyos-ascii
-pkgver=6.1.0.r205.gebc990f
+pkgver=6.1.0.r210.g0cc7921
 pkgrel=1
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
 arch=('any')
