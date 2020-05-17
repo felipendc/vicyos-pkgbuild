@@ -1,0 +1,68 @@
+# vicyos-third-party-gnome-extensions:
+
+# Each gnome extension from vicyos-third-party-gnome-extensions-git-*.zst 
+# has its own maintainers. Here are the maintainters and source code:
+
+
+# Maintainer: kgshank (Gnome Shell Extension - Sound Input & Output Device Chooser)
+# folder name: sound-output-device-chooser@kgshank.net
+# Source: github.com/kgshank/gse-sound-output-device-chooser
+
+# Maintainer: biji (Simple net speed)
+# folder name: simplenetspeed@biji.extension
+# Source: github.com/biji/simplenetspeed
+
+
+# Maintainer: HarlemSquirrel (Sensory Perception)
+# folder name: sensory-perception@HarlemSquirrel.github.io
+# Source: https://github.com/HarlemSquirrel/gnome-shell-extension-sensory-perception
+
+
+# Maintainer: Jens Lody (gnome-shell-extension-openweather)
+# folder name: openweather-extension@jenslody.de
+# Source: https://gitlab.com/jenslody/gnome-shell-extension-openweather
+
+
+# Maintainer: andyholmes (gnome-shell-extension-gsconnect)
+# folder name: gsconnect@andyholmes.github.io
+# Source: https://github.com/andyholmes/gnome-shell-extension-gsconnect/wiki
+
+
+# Maintainer: neumann-d (ShutdownTimer)
+# folder name: ShutdownTimer@neumann
+# Source: https://github.com/neumann-d/ShutdownTimer
+
+
+# Packager for VicyosLinux: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-third-party-gnome-extensions-git
+_pkgname=vicyos-third-party-gnome-extensions
+_destname1="/etc/skel/.local/share/gnome-shell/extensions/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.5.16
+pkgrel=1
+pkgdesc="third-party-gnome-extensions for vicyoslinux-gnome-edition"
+arch=('any')
+url="https://github.com/felipendc/vicyos-third-party-gnome-extensions"
+license=('GPL3')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/README.md
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
