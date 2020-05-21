@@ -1,0 +1,54 @@
+# Maintainer: Maxime Gauduin <alucrydarchlinux.org>
+# Contributor: Padfoot <padfoot@exemail.com.au>
+# Source : https://launchpad.net/lightdm-gtk-greeter
+# Edited by Felipe Ndc for VicyosLinux
+
+pkgname=vicyos-lightdm-gtk-greeter-specific-for-xfce-git
+_pkgname=vicyos-lightdm-gtk-greeter-specific-for-xfce
+
+_destname1="/etc/lightdm/"
+_destname2="/usr/bin/"
+_destname3="/usr/share/doc/lightdm-gtk-greeter/"
+_destname4="/usr/share/icons/hicolor/scalable/places/"
+_destname5="/usr/share/locale/"
+_destname6="/usr/share/xgreeters/"
+
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=2.0.6
+pkgrel=1
+pkgdesc="lightdm-gtk-greeter-specific for vicyoslinux-xfce-Dark"
+arch=('any')
+url="https://launchpad.net/lightdm-gtk-greeter"
+license=('GPL3' 'LGPL3')
+makedepends=('git')
+depends=('gtk3' 'lightdm')
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+	install -dm755 ${pkgdir}${_destname3}
+	install -dm755 ${pkgdir}${_destname4}
+	install -dm755 ${pkgdir}${_destname5}
+	install -dm755 ${pkgdir}${_destname6}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/README.md
+	rm -r  ${srcdir}/${_pkgname}/LICENSE	
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname2}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname3}* ${pkgdir}${_destname3}
+	cp -r  ${srcdir}/${_pkgname}${_destname4}* ${pkgdir}${_destname4}
+	cp -r  ${srcdir}/${_pkgname}${_destname5}* ${pkgdir}${_destname5}
+	cp -r  ${srcdir}/${_pkgname}${_destname6}* ${pkgdir}${_destname6}
+}
