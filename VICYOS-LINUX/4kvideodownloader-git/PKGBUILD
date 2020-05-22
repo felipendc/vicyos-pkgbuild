@@ -1,6 +1,6 @@
 # Maintainer: Muflone http://www.muflone.com/contacts/english/
 
-# Maintained for VicyosLinux by "felipendc" (In case the original package from Muflone gets out-dated)
+# Maintained for VicyosLinux by "felipendc" (In case the original package from Muflone gets out-dated for too long)
 pkgname=4kvideodownloader
 pkgver=4.12.3.3650
 pkgrel=2
