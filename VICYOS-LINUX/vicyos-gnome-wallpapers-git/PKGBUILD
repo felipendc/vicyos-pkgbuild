@@ -1,0 +1,29 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-gnome-wallpapers-git
+_pkgname=vicyos-gnome-wallpapers
+_destname1="/etc/skel/.local/share/backgrounds/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.6.2
+pkgrel=1
+pkgdesc="Wallpapers for Arch Linux"
+arch=('any')
+url="https://github.com/felipendc/vicyos-gnome-wallpapers"
+license=('GPL3')
+makedepends=('git')
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh 
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	cp -r  ${srcdir}/${_pkgname}/gnome-wallpaper/* ${pkgdir}${_destname1}
+}
