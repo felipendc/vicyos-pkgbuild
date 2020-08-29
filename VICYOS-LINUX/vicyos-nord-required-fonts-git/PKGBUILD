@@ -1,0 +1,33 @@
+# Maintainer: Felipe Ndc <felipendc10@gmail.com>
+
+pkgname=vicyos-nord-required-fonts-git
+_pkgname=vicyos-nord-required-fonts
+
+_destname1="/usr/share/fonts/"
+_licensedir="/usr/share/vicyos/licenses/"
+
+pkgver=20.8.28
+pkgrel=1
+pkgdesc="vicyos-nord-required-fonts"
+arch=('any')
+url="https://github.com/felipendc/vicyos-nord-required-fonts"
+license=('OFL-1.1' 'MIT' 'GPLv2')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755  ${pkgdir}${_licensedir}
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+#	rm -r  ${srcdir}/${_pkgname}/LICENSE
+	cp -r  ${srcdir}/${_pkgname}/fonts/* ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}/licenses/* ${pkgdir}${_licensedir}
+}
