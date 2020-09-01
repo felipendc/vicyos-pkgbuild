@@ -1,0 +1,36 @@
+ 
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-nord-polybar-git
+_pkgname=vicyos-nord-polybar
+_destname1="/etc/skel/.config/polybar/"
+
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.9.1
+pkgrel=1
+pkgdesc="vicyos-nord-polybar for VicyosLinux-Nord"
+arch=('any')
+url="https://github.com/felipendc/vicyos-nord-polybar"
+license=('GPL3')
+makedepends=('git' 'yay' 'polybar' 'dmenu' 'rofi')
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE
+
+#	rm -r  ${srcdir}/${_pkgname}/install-polybar-fonts.sh
+#	rm -r  ${srcdir}/${_pkgname}/README.md
+
+    cp -r  ${srcdir}/${_pkgname}/polybar-nord/* ${pkgdir}${_destname1}
+}
