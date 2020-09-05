@@ -1,16 +1,15 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-nord-root-git
-_pkgname=vicyos-nord-root
-
-_destname1="/etc/skel/"
-_destname2="/etc/"
+pkgname=vicyos-nord-betterlockscreen-cache-git
+_pkgname=vicyos-nord-betterlockscreen-cache
+_destname1="/vicyos_nord_betterlockscreen_cache/.cache/i3lock/"
+_destname2="/etc/skel/.cache/i3lock/"
 
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.9.1
+pkgver=20.9.5
 pkgrel=1
-pkgdesc="vicyos-nord root files"
+pkgdesc="betterlockscreen-cache for vicyos-nord-edition"
 arch=('any')
-url="https://github.com/felipendc/vicyos-nord-root"
+url="https://github.com/felipendc/vicyos-nord-betterlockscreen-cache"
 license=('GPL3')
 makedepends=('git')
 depends=()
@@ -28,10 +27,11 @@ package() {
 	install -dm755 ${pkgdir}${_destname1}
 	install -dm755 ${pkgdir}${_destname2}
 
-
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/setup-git.sh
 	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
-	cp -r  ${srcdir}/${_pkgname}${_destname1} ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+
+	
 }
