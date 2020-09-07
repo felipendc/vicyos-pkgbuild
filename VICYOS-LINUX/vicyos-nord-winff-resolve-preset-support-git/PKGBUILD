@@ -1,0 +1,35 @@
+# Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+pkgname=vicyos-nord-winff-resolve-preset-support-git
+_pkgname=vicyos-nord-winff-resolve-preset-support
+_destname1="/davinci-resolve-preset-file/"
+_destname2="/etc/skel/.winff/"
+_licensedir="/usr/share/vicyos/licenses/"
+pkgver=20.9.7
+pkgrel=1
+pkgdesc="davinci-resolve-preset-file for vicyos-nord"
+arch=('any')
+url="https://github.com/felipendc/vicyos-nord-winff-resolve-preset-support"
+license=('GPL3')
+makedepends=('git')
+depends=()
+replaces=($_pkgname)
+conflicts=($_pkgname)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+
+	rm -r  ${srcdir}/${_pkgname}/.git
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
+	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh
+	rm -r  ${srcdir}/${_pkgname}/LICENSE	
+#	rm -r  ${srcdir}/${_pkgname}/README.md
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
+}
