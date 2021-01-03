@@ -1,13 +1,13 @@
 # Maintainer: Felipe Ndc (Vicyos) <felipendc10@gmail.com>
-pkgname=vicyos-whisker-menu-icons-git
-_pkgname=vicyos-whisker-menu-icons
+pkgname=vicyos-whisker-menu-icons-personal-git
+_pkgname=vicyos-whisker-menu-icons-personal
 _destname1="/usr/share/pixmaps/"
 _licensedir="/usr/share/vicyos/licenses/"
 pkgver=20.2.8
 pkgrel=1
 pkgdesc="vicyos whisker menu icons"
 arch=('any')
-url="https://github.com/felipendc/vicyos-whisker-menu-icons"
+url="https://github.com/felipendc/vicyos-whisker-menu-icons-personal"
 license=('GPL3')
 makedepends=('git')
 replaces=($_pkgname)
