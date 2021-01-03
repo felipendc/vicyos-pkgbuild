@@ -1,3 +1,3 @@
 
-To auto install dependencies 
-makepkg -s
+To auto install dependencies <br />
+makepkg -s <br />
