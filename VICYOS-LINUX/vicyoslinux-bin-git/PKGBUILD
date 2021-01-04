@@ -1,0 +1,27 @@
+# Originally created by: Erik Dubois <erik.dubois@gmail.com>
+# This package was adapted for VicyosLinux and it's being maintained by Felipe Ndc (Vicyos) <felipendc10@gmail.com>
+
+pkgname=vicyoslinux-bin-git
+_pkgname=vicyoslinux-bin
+_destname1="/etc/skel/.bin/"
+_licensedir="/usr/share/vicyoslinux/licenses/"
+pkgver=21.1.4
+pkgrel=4
+pkgdesc=".bin folder from arcolinux providing fun scripts for vicyoslinux"
+arch=('any')
+url="https://github.com/felipendc/vicyoslinux-bin"
+license=('GPL3')
+makedepends=('git')
+depends=('bash' 'wmctrl' 'pacman-contrib')
+provides=("${pkgname}")
+#options=(!strip !emptydirs)
+source=(${_pkgname}::"git+https://github.com/felipendc/${_pkgname}")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+	install -m644  ${srcdir}/${_pkgname}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
