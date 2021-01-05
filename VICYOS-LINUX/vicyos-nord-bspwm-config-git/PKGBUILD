@@ -5,8 +5,8 @@ _pkgname=vicyos-nord-bspwm-config
 _destname1="/etc/skel/.config/bspwm/"
 
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=20.9.1
-pkgrel=1
+pkgver=21.1.5
+pkgrel=2
 pkgdesc="vicyos-nord-bspwm-config for VicyosLinux-Nord"
 arch=('any')
 url="https://github.com/felipendc/vicyos-nord-bspwm-config"
