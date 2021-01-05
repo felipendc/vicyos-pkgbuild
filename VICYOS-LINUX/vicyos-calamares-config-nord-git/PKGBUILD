@@ -4,8 +4,8 @@ _pkgname=vicyos-calamares-config-nord
 _destname1="/calamares/"
 _destname2="/etc/calamares/"
 _licensedir="/usr/share/vicyos/licenses/"
-pkgver=21.1.7
-pkgrel=4
+pkgver=21.1.10
+pkgrel=10
 pkgdesc="calamares config for vicyos-nord"
 arch=('any')
 url="https://github.com/felipendc/vicyos-calamares-config-nord.git"
@@ -28,7 +28,7 @@ package() {
 
 	rm -r  ${srcdir}/${_pkgname}/.git
 	rm -r  ${srcdir}/${_pkgname}/setup-git-v1.sh
-	rm -r  ${srcdir}/${_pkgname}/git-v1.sh
+	rm -r  ${srcdir}/${_pkgname}/git-v2.sh
 	rm -r  ${srcdir}/${_pkgname}/LICENSE	
 	cp -r  ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname2}
 }
